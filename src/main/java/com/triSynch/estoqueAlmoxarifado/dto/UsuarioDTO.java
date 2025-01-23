@@ -1,31 +1,30 @@
-package com.triSynch.estoqueAlmoxarifado.entity;
+package com.triSynch.estoqueAlmoxarifado.dto;
 
-import jakarta.persistence.*;
+import com.triSynch.estoqueAlmoxarifado.entity.UsuarioEntity;
+import org.springframework.beans.BeanUtils;
 
-@Entity
-@Table(name = "eA_USUARIO")
-public class usuarioEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class UsuarioDTO {
+
+
     private Long id;
 
-    @Column(nullable = false)
     private String nome;
 
-    @Column(nullable = false, unique = true)
     private String nome_de_usuario;
 
-    @Column(nullable = false)
     private String setor;
 
-    @Column(nullable = false)
     private String cargo;
 
-    @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(nullable = false)
     private String senhaHash;
+
+    public UsuarioDTO(UsuarioEntity usuario){
+
+        BeanUtils.copyProperties(usuario, this);
+
+    }
 
     public Long getId() {
         return id;
