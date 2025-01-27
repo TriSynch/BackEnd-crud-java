@@ -7,7 +7,7 @@ import org.springframework.beans.BeanUtils;
 import java.util.Objects;
 
 @Entity
-@Table(name = "eA_USUARIO")
+@Table(name = "usuarioss")
 public class UsuarioEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,6 +30,9 @@ public class UsuarioEntity {
 
     @Column(nullable = false)
     private String senhaHash;
+
+
+    public UsuarioEntity (){}
 
     public UsuarioEntity(UsuarioDTO usuario ){
 
