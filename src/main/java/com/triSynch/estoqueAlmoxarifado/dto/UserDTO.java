@@ -3,10 +3,12 @@ package com.triSynch.estoqueAlmoxarifado.dto;
 import com.triSynch.estoqueAlmoxarifado.entity.UserEntity;
 import org.springframework.beans.BeanUtils;
 
+import java.util.UUID;
+
 public class UserDTO {
 
 
-    private Long id;
+    private UUID id;
     private String name;
     private String username;
     private String sector;
@@ -21,11 +23,11 @@ public class UserDTO {
 
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

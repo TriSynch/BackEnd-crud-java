@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping(value = "/user")
@@ -22,7 +23,6 @@ public class UserController {
     }
 
     @PostMapping
-
     public void post(@RequestBody UserDTO user) {
         userService.post(user);
 
@@ -30,16 +30,15 @@ public class UserController {
 
     @PutMapping
     public UserDTO put(@RequestBody UserDTO user) {
-
         return userService.put(user);
 
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> delete(@PathVariable("id") UUID id) {
 
         userService.delete(id);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.noContent().build();
 
     }
 

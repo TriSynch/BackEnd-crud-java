@@ -5,13 +5,15 @@ import jakarta.persistence.*;
 import org.springframework.beans.BeanUtils;
 
 import java.util.Objects;
+import java.util.UUID;
 
 @Entity
 @Table(name = "user")
 public class UserEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(columnDefinition = "BINARY(16)")
+    private UUID id;
 
     @Column(nullable = false)
     private String name;
@@ -39,11 +41,11 @@ public class UserEntity {
 
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
