@@ -6,6 +6,8 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface UserRepository extends JpaRepository<UserEntity, UUID> {
-    Optional<UserEntity> findByUsernameAndPasswordHash(String username, String passwordHash);
 
+    Optional<UserEntity> findByEmail(String email);
+
+    Optional<UserEntity> findByUsername(String username);
 }
